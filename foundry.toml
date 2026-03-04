@@ -1,6 +1,14 @@
 [profile.default]
 src = "src"
+test = "test"
 out = "out"
 libs = ["lib"]
 
+remappings = [
+  "account-abstraction/=lib/account-abstraction/",
+  "@account-abstraction/=lib/account-abstraction/",
+  "@openzeppelin/=lib/openzeppelin-contracts/"
+]
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
