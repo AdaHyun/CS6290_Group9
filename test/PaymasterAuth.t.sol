@@ -6,14 +6,20 @@ import "forge-std/Test.sol";
 import "account-abstraction/contracts/core/EntryPoint.sol";
 import "account-abstraction/contracts/interfaces/IPaymaster.sol";
 import "account-abstraction/contracts/test/TestPaymasterAcceptAll.sol";
+import "./helpers/EvidenceRecorder.sol";
 
-contract PaymasterAuthTest is Test {
+contract PaymasterAuthTest is EvidenceRecorder {
     EntryPoint ep;
     TestPaymasterAcceptAll paymaster;
+    string internal constant RESULTS_PATH = "results/s1_paymaster_access.csv";
 
     function setUp() public {
         ep = new EntryPoint();
         paymaster = new TestPaymasterAcceptAll(ep);
+        _prepareResultsFile(
+            RESULTS_PATH,
+            "case_id,method,caller,result,notes"
+        );
     }
 
     function test_validatePaymasterUserOp_onlyEntryPoint_canCall() public {
@@ -23,6 +29,18 @@ contract PaymasterAuthTest is Test {
 
         vm.expectRevert();
         paymaster.validatePaymasterUserOp(userOp, userOpHash, maxCost);
+
+        emit log_string(
+            "S1 validatePaymasterUserOp reverted for non-entrypoint caller"
+        );
+        _appendResult(
+            RESULTS_PATH,
+            string.concat(
+                "s1_validate_non_entrypoint,validatePaymasterUserOp,",
+                _toAddressString(address(this)),
+                ",revert,non-entrypoint caller blocked"
+            )
+        );
     }
 
     function test_postOp_onlyEntryPoint_canCall() public {
@@ -36,6 +54,18 @@ contract PaymasterAuthTest is Test {
             context,
             actualGasCost,
             actualUserOpFeePerGas
+        );
+
+        emit log_string(
+            "S1 postOp reverted for non-entrypoint caller"
+        );
+        _appendResult(
+            RESULTS_PATH,
+            string.concat(
+                "s1_postop_non_entrypoint,postOp,",
+                _toAddressString(address(this)),
+                ",revert,non-entrypoint caller blocked"
+            )
         );
     }
 }
