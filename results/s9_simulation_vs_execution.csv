@@ -1,0 +1,4 @@
+case_id,simulate_result,execution_result,metric,value,notes
+s9_account_nonce_monotonic,pass,pass,nonce,0,account nonce monotonically increasing
+s9_paymaster_overcharge_check,pass,pass,deposit,100000000000000000000,EntryPoint should not overcharge paymaster
+s9_paymaster_deposit_non_negative,pass,pass,deposit,100000000000000000000,deposit never negative

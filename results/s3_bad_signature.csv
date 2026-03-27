@@ -1,0 +1,5 @@
+case_id,nonce,signing_key,result,counter,notes
+s3_bad_signature,0,2827,revert,0,invalid signature rejected
+s3_bad_signature,0,2827,revert,0,invalid signature rejected
+s3_bad_signature,0,2827,revert,0,invalid signature rejected
+s3_bad_signature,0,2827,revert,0,invalid signature rejected

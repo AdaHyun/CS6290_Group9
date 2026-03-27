@@ -1,0 +1,4 @@
+case_id,op1_expected,op2_expected,op2_observed,op2_effect,result_type,notes
+s6_batch_case3,paymaster_deposit_low,success,skipped,0,batch_reverted,AA31 paymaster deposit too low halted batch
+s6_batch_case1,fail_execution,success,success,1,continued,op1 forced revert in execution stage
+s6_batch_case2,invalid_signature,success,skipped,0,batch_reverted,AA24 signature error halted batch

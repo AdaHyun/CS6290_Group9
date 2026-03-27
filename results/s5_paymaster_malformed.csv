@@ -1,0 +1,4 @@
+case_id,paymaster_data_length,result,revert_reason,notes
+s5_malformed_paymaster_data,1,revert,InvalidPaymasterData,malformed paymaster data blocked
+s5_malformed_paymaster_data,1,revert,InvalidPaymasterData,malformed paymaster data blocked
+s5_malformed_paymaster_data,1,revert,InvalidPaymasterData,malformed paymaster data blocked

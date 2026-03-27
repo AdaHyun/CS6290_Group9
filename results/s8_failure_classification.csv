@@ -1,0 +1,6 @@
+case_id,error_code,metric,value,notes
+s8_malformed_paymaster_data,4,paymaster_data_length,14,malformed paymaster data blocked
+s8_error_code_uniqueness,0,status,unique,all failure codes unique
+s8_bad_signature,1,signature_valid,invalid,invalid signature rejected
+s8_duplicate_nonce,2,nonce_value,0,duplicate nonce rejected
+s8_insufficient_paymaster_deposit,3,deposit_after_withdraw,0,paymaster deposit too low

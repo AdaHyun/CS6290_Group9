@@ -1,0 +1,9 @@
+case_id,nonce,expected,result,counter,notes
+s2_first_execution,0,success,success,1,initial execution accepted
+s2_replay_execution,0,fail,revert,1,AA25 invalid account nonce
+s2_first_execution,0,success,success,1,initial execution accepted
+s2_replay_execution,0,fail,revert,1,AA25 invalid account nonce
+s2_first_execution,0,success,success,1,initial execution accepted
+s2_replay_execution,0,fail,revert,1,AA25 invalid account nonce
+s2_first_execution,0,success,success,1,initial execution accepted
+s2_replay_execution,0,fail,revert,1,AA25 invalid account nonce

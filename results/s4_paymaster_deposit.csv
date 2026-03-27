@@ -1,0 +1,4 @@
+case_id,paymaster_deposit_before,paymaster_deposit_after,result,revert_reason,notes
+s4_paymaster_insufficient,0,0,revert,AA31 paymaster deposit too low,deposit too low halted sponsored op
+s4_paymaster_insufficient,0,0,revert,AA31 paymaster deposit too low,deposit too low halted sponsored op
+s4_paymaster_insufficient,0,0,revert,AA31 paymaster deposit too low,deposit too low halted sponsored op
